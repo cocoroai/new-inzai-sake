@@ -17,17 +17,21 @@
 
 | 項目 | 内容 |
 |------|------|
-| 本番URL | （設定後に記載） |
-| ダッシュボード | （設定後に記載） |
+| 本番URL | https://new-inzai-sake.vercel.app |
+| ダッシュボード | https://vercel.com/cocoroais-projects/new-inzai-sake |
+| チーム | cocoroai's projects |
 | アカウント | cocoroai（GitHubと連携） |
 
-### microCMS（お知らせ管理）
+### microCMS（コンテンツ管理）
 
 | 項目 | 内容 |
 |------|------|
-| 管理画面 | https://inzaisake.microcms.io/apis/news |
+| 管理画面 | https://inzaisake.microcms.io |
 | サービスID | inzaisake |
-| エンドポイント | news |
+| エンドポイント（お知らせ） | news |
+| エンドポイント（トピックス） | topics |
+
+※Vercelの環境変数に`MICROCMS_API_KEY`の設定が必要です。
 
 ---
 
@@ -66,7 +70,8 @@ new-inzai-sake/
 ├── README.md
 ├── .gitignore
 ├── api/
-│   └── news.js         # microCMS連携API
+│   ├── news.js         # お知らせ取得API（microCMS連携）
+│   └── topics.js       # トピックス取得API（microCMS連携）
 └── images/
     ├── dragon-animation.mp4   # 龍のアニメーション
     ├── logo-text-only.png     # ロゴ文字
@@ -85,10 +90,10 @@ new-inzai-sake/
 | 【2】| 秋：稲刈り体験 | プロジェクトセクション |
 | 【3】| 冬：醸造 | プロジェクトセクション |
 | 【4】| 商品写真 | 商品情報セクション |
-| 【5】| 窪田酒造ロゴ | 生産者セクション |
-| 【6】| 窪田酒造写真 | 生産者セクション |
-| 【7】| 米のはすみロゴ | 生産者セクション |
-| 【8】| 米のはすみ写真 | 生産者セクション |
+| 【5】| 窪田酒造様ロゴ | 生産者セクション |
+| 【6】| 窪田酒造様写真 | 生産者セクション |
+| 【7】| 米のはすみ様ロゴ | 生産者セクション |
+| 【8】| 米のはすみ様写真 | 生産者セクション |
 
 ---
 
@@ -96,7 +101,7 @@ new-inzai-sake/
 
 1. **ヘッダー** - ロゴ・タグライン
 2. **ヒーロー** - 龍アニメーション + ロゴ文字
-3. **お知らせバナー** - 最新のお知らせを表示
+3. **トピックスバナー** - microCMSのtopicsから最新情報を表示
 4. **商品紹介** - 選ばれし米、磨かれし技
 5. **プロジェクト** - 地域と未来をつなぐプロジェクト（田植え・稲刈り・醸造）
 6. **味わいの特徴** - 3つの特徴カード
@@ -125,6 +130,12 @@ git push origin main
 ---
 
 ## 更新履歴
+
+### 2025.12.12
+- 窪田酒造・米のはすみに敬称「様」を追加
+- お知らせを日付の降順（最新が上）にソート
+- トピックス用APIエンドポイント（api/topics.js）を追加
+- トピックスバナーをmicroCMSのtopicsから取得するよう修正
 
 ### 2024.12.12
 - 初期コミット
