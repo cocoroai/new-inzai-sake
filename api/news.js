@@ -24,7 +24,7 @@ export default async function handler(req, res) {
     }
 
     const limit = req.query.limit || 5;
-    const url = `https://${serviceId}.microcms.io/api/v1/${endpoint}?limit=${limit}`;
+    const url = `https://${serviceId}.microcms.io/api/v1/${endpoint}?limit=${limit}&orders=-date`;
 
     try {
         const response = await fetch(url, {
