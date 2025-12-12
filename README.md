@@ -59,16 +59,18 @@
 
 ```
 new-inzai-sake/
+├── index.html          # メインページ
+├── style.css           # スタイルシート
+├── script.js           # JavaScript
+├── vercel.json         # Vercel設定
 ├── README.md
 ├── .gitignore
-└── pattern1-1-1/
-    ├── index.html          # メインページ
-    ├── style.css           # スタイルシート
-    ├── script.js           # JavaScript
-    └── images/
-        ├── dragon-animation.mp4   # 龍のアニメーション
-        ├── logo-text-only.png     # ロゴ文字
-        └── ...
+├── api/
+│   └── news.js         # microCMS連携API
+└── images/
+    ├── dragon-animation.mp4   # 龍のアニメーション
+    ├── logo-text-only.png     # ロゴ文字
+    └── ...
 ```
 
 ---
