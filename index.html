@@ -8,9 +8,12 @@
 </head>
 <body>
     <header class="header">
-        <div class="container">
-            <h1 class="logo">Legend of INZAI<span>〜龍の奇跡〜</span></h1>
-            <p class="tagline">印西の大地が醸す聖なるSAKE</p>
+        <div class="container header-container">
+            <div class="header-content">
+                <h1 class="logo">Legend of INZAI<span>〜龍の奇跡〜</span></h1>
+                <p class="tagline">印西の大地が醸す聖なるSAKE</p>
+            </div>
+            <a href="#news-section" class="header-btn">お知らせ</a>
         </div>
     </header>
 
@@ -27,7 +30,7 @@
 
     <section class="news-banner">
         <div class="container">
-            <p class="news-banner-text" id="topics-banner"><span class="news-badge">お知らせ</span><span class="topics-content">読み込み中...</span></p>
+            <p class="news-banner-text" id="topics-banner"><span class="news-badge">トピックス</span><span class="topics-content">読み込み中...</span></p>
         </div>
     </section>
 
@@ -135,9 +138,9 @@
                         </tr>
                     </table>
                     <div class="product-producers">
-                        <p><span>製造者：</span>窪田酒造株式会社（千葉県野田市山崎 685-2）</p>
-                        <p><span>販売者：</span>印西市商工会（千葉県印西市大森 3934-4）</p>
-                        <p><span>酒米生産者：</span>米のはすみ（千葉県印西市中 26-1）</p>
+                        <p><span class="producer-label">製造者：</span><span class="producer-name">窪田酒造株式会社</span><span class="producer-address">（千葉県野田市山崎 685-2）</span></p>
+                        <p><span class="producer-label">販売者：</span><span class="producer-name">印西市商工会</span><span class="producer-address">（千葉県印西市大森 3934-4）</span></p>
+                        <p><span class="producer-label">酒米生産者：</span><span class="producer-name">米のはすみ</span><span class="producer-address">（千葉県印西市中 26-1）</span></p>
                     </div>
                 </div>
             </div>
@@ -224,6 +227,7 @@
                             <th>店舗名</th>
                             <th>住所（印西市）</th>
                             <th>電話番号</th>
+                            <th>メールアドレス</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -231,16 +235,19 @@
                             <td>印西市商工会</td>
                             <td>印西市大森2535</td>
                             <td>0476-42-2750</td>
+                            <td class="placeholder-cell">【9】印西市商工会メールアドレス</td>
                         </tr>
                         <tr>
                             <td>酒乃なべだな</td>
                             <td>印西市木下1458</td>
                             <td>0476-42-3241</td>
+                            <td class="placeholder-cell">【10】酒乃なべだなメールアドレス</td>
                         </tr>
                         <tr>
                             <td>米のはすみ</td>
                             <td>印西市平賀学園台</td>
                             <td>お問い合わせください</td>
+                            <td class="placeholder-cell">【11】米のはすみメールアドレス</td>
                         </tr>
                     </tbody>
                 </table>
@@ -249,7 +256,7 @@
         </div>
     </section>
 
-    <section class="news scroll-reveal">
+    <section id="news-section" class="news scroll-reveal">
         <div class="container">
             <h2 class="section-title">お知らせ</h2>
             <div class="news-list" id="news-list">
@@ -261,7 +268,7 @@
     <section class="contact">
         <div class="container">
             <h2 class="section-title">お問い合わせ</h2>
-            <p class="contact-info">印西市商工会</p>
+            <p class="contact-info"><a href="https://www.inzai.or.jp/" target="_blank">印西市商工会</a></p>
             <p class="contact-tel">TEL: 0476-42-2750</p>
         </div>
     </section>

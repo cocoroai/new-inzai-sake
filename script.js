@@ -60,11 +60,13 @@ function renderNews(newsItems) {
         return;
     }
 
-    const newsHTML = newsItems.map(item => {
+    const initialCount = 3;
+    const newsHTML = newsItems.map((item, index) => {
         const plainContent = stripHtml(item.content);
+        const hiddenClass = index >= initialCount ? 'news-item-hidden' : '';
 
         return `
-            <div class="news-item">
+            <div class="news-item ${hiddenClass}">
                 <div class="news-header">
                     <span class="news-date">${formatDate(item.date || item.publishedAt || item.createdAt)}</span>
                     <h3>${item.title}</h3>
@@ -77,10 +79,25 @@ function renderNews(newsItems) {
         `;
     }).join('');
 
-    newsList.innerHTML = newsHTML;
+    // もっと見るボタン（4件以上ある場合のみ表示）
+    const moreButtonHTML = newsItems.length > initialCount
+        ? '<button class="news-more-btn" id="news-more-btn">もっと見る</button>'
+        : '';
+
+    newsList.innerHTML = newsHTML + moreButtonHTML;
 
     // アコーディオンイベントを再設定
     initNewsAccordion();
+
+    // もっと見るボタンのイベント
+    const moreBtn = document.getElementById('news-more-btn');
+    if (moreBtn) {
+        moreBtn.addEventListener('click', () => {
+            const hiddenItems = document.querySelectorAll('.news-item-hidden');
+            hiddenItems.forEach(item => item.classList.remove('news-item-hidden'));
+            moreBtn.style.display = 'none';
+        });
+    }
 }
 
 // エラー時の表示
