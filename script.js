@@ -119,9 +119,9 @@ function initNewsAccordion() {
     });
 }
 
-// トピックスバナーを取得（最新1件 - newsから取得）
+// トピックスバナーを取得（最新1件）
 async function fetchTopics() {
-    const url = '/api/news?limit=1';
+    const url = '/api/topics?limit=1';
     const topicsContent = document.querySelector('.topics-content');
 
     if (!topicsContent) return;
